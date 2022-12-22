@@ -12,13 +12,17 @@ const AddForm = ({addProduct}) => {
       image
     };
     addProduct(newProduct);
+    setTitle('')
+    setPrice('')
+    setImage('')
   }
+
 
   return (
     <div className='container'> 
-      <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder='title'/>
-      <input onChange={(e) => setPrice(e.target.value)} type="text" placeholder='price'/>
-      <input onChange={(e) => setImage(e.target.value)} type="text" placeholder='image'/>
+      <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder='title'/>
+      <input value={price} onChange={(e) => setPrice(e.target.value)} type="text" placeholder='price'/>
+      <input  value={image} onChange={(e) => setImage(e.target.value)} type="text" placeholder='image'/>
       <button  onClick={handleValues}> Add product</button>
     </div>
   )
